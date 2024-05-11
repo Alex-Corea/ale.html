@@ -52,6 +52,14 @@
     <button onClick="checkAnswer(Canadá)">Canadá</button>
 </div>
 
+<div class="question" id="question4" style="display: none;">
+<h2>¿cuáles son las cataratas más grande del mundo?</h2>
+<button onclick="checkAnswer('Cataratas del Iguazú')">Cataratas del Iguazú</button>
+    <button onclick="checkAnswer('Cataratas de Rhin')">Cataratas del Rhin</button>
+    <button onclick="checkAnswer('Cataratas del Ángel')">Cataratas del Ángel</button>
+    <button onClick="checkAnswer('Cataratas de Tugela')">Cataratas de Tugela</button>
+</div>
+
   <div id="result"></div>
 
   <script>
@@ -70,6 +78,11 @@
         currentQuestion++;
       } else if (currentQuestion === 3 && answer === 'Rusia') {
         document.getElementById('result').innerHTML = 'Respuesta correcta';
+        document.getElementById('question3').style.display = 'none';
+        document.getElementById('question4').style.display = 'block';
+        cuerrentQuestion++;
+      } else if (currenQuestion === 4 && answer === 'Cataratas del Ángel') {
+        document.getElementById('result'),innerHTML = 'Respuesta correcta';
       } else {
         document.getElementById('result').innerHTML = 'Respuesta incorrecta';
       }
