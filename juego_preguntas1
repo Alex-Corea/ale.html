@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego de preguntas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 12px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="startGame()">Comenzar juego</button>
+  
+  <div class="question" id="question1" style="display: none;">
+    <h2>¿Cuál es la capital de Francia?</h2>
+    <button onclick="checkAnswer('Paris')">Paris</button>
+    <button onclick="checkAnswer('Londres')">Londres</button>
+    <button onclick="checkAnswer('Roma')">Roma</button>
+    <button onclick="checkAnswer('Berlín')">Berlín</button>
+  </div>
+  
+  <div class="question" id="question2" style="display: none;">
+    <h2>¿Cuál es el océano más grande del mundo?</h2>
+    <button onclick="checkAnswer('Océano Pacífico')">Océano Pacífico</button>
+    <button onclick="checkAnswer('Océano Atlántico')">Océano Atlántico</button>
+    <button onclick="checkAnswer('Océano Índico')">Océano Índico</button>
+    <button onclick="checkAnswer('Océano Antártico')">Océano Antártico</button>
+  </div>
+
+  <div id="result"></div>
+
+  <script>
+    var currentQuestion = 1;
+
+    function startGame() {
+      document.getElementById('question1').style.display = 'block';
+    }
+
+    function checkAnswer(answer) {
+      if (currentQuestion === 1 && answer === 'Paris') {
+        document.getElementById('result').innerHTML = 'Respuesta correcta';
+        document.getElementById('question1').style.display = 'none';
+        document.getElementById('question2').style.display = 'block';
+        currentQuestion++;
+      } else if (currentQuestion === 2 && answer === 'Océano Pacífico') {
+        document.getElementById('result').innerHTML = 'Respuesta correcta';
+      } else {
+        document.getElementById('result').innerHTML = 'Respuesta incorrecta';
+      }
+    }
+  </script>
+</body>
+</html>
